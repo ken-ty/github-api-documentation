@@ -1,0 +1,19 @@
+{
+  "name": "github-api-documentation",
+  "version": "1.0.0",
+  "description": "自動生成したGithubAPI のドキュメンテーション",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ken-ty/github-api-documentation.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ken-ty/github-api-documentation/issues"
+  },
+  "homepage": "https://github.com/ken-ty/github-api-documentation#readme"
+}
