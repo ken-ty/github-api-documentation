@@ -34,6 +34,7 @@ npm install -g cz-conventional-changelog-ja
 ## 参考
 
 https://github.com/github/rest-api-description
+https://www.infoq.com/jp/news/2020/08/GitHub-open-api-spec/
 
 ## リリース
 
