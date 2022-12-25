@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/ken-ty/github-api-documentation/issues"
   },
-  "homepage": "https://github.com/ken-ty/github-api-documentation#readme"
+  "homepage": "https://github.com/ken-ty/github-api-documentation#readme",
+  "devDependencies": {
+    "api2html": "^0.4.0"
+  }
 }
