@@ -1515,6 +1515,11 @@ var n=this.pipeline.run(e.tokenizer(t)),r=new e.Vector,i=[],o=this._fields.reduc
                     
                   </li>
                 
+                  <li>
+                    <a href="#createrepository" class="toc-h2 toc-link" data-title="">createRepository</a>
+                    
+                  </li>
+                
               </ul>
             
           </li>
@@ -1546,15 +1551,21 @@ var n=this.pipeline.run(e.tokenizer(t)),r=new e.Vector,i=[],o=this._fields.reduc
 <p>Code samples</p>
 </blockquote>
 <pre class="highlight tab tab-shell"><code><span class="hljs-comment"># You can also use wget</span>
-curl -X GET https://api.github.com/repos
+curl -X GET https://api.github.com/repos \
+  -H <span class="hljs-string">&#x27;Accept: application/json&#x27;</span>
 
 </code></pre>
 <pre class="highlight tab tab-javascript--nodejs"><code><span class="hljs-keyword">const</span> fetch = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;node-fetch&#x27;</span>);
 
+<span class="hljs-keyword">const</span> headers = {
+  <span class="hljs-string">&#x27;Accept&#x27;</span>:<span class="hljs-string">&#x27;application/json&#x27;</span>
+};
+
 fetch(<span class="hljs-string">&#x27;https://api.github.com/repos&#x27;</span>,
 {
-  <span class="hljs-attr">method</span>: <span class="hljs-string">&#x27;GET&#x27;</span>
+  <span class="hljs-attr">method</span>: <span class="hljs-string">&#x27;GET&#x27;</span>,
 
+  <span class="hljs-attr">headers</span>: headers
 })
 .then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">res</span>) </span>{
     <span class="hljs-keyword">return</span> res.json();
@@ -1628,6 +1639,14 @@ fetch(<span class="hljs-string">&#x27;https://api.github.com/repos&#x27;</span>,
 </tr>
 </tbody>
 </table>
+<blockquote>
+<p>Example responses</p>
+</blockquote>
+<blockquote>
+<p>200 Response</p>
+</blockquote>
+<pre class="highlight tab tab-json"><code>[]
+</code></pre>
 <h3 id="listrepositories-responses">Responses</h3>
 <table>
 <thead>
@@ -1638,8 +1657,113 @@ fetch(<span class="hljs-string">&#x27;https://api.github.com/repos&#x27;</span>,
 <th>Schema</th>
 </tr>
 </thead>
-<tbody></tbody>
+<tbody>
+<tr>
+<td>200</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.3.1">OK</a></td>
+<td>リポジトリの一覧</td>
+<td>Inline</td>
+</tr>
+<tr>
+<td>400</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.1">Bad Request</a></td>
+<td>不正なリクエストです</td>
+<td>None</td>
+</tr>
+</tbody>
 </table>
+<h3 id="listrepositories-responseschema">Response Schema</h3>
+<p>Status Code <strong>200</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Restrictions</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>» <em>anonymous</em></td>
+<td>any</td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+</tbody>
+</table>
+<aside class="success">
+This operation does not require authentication
+</aside>
+<h2 id="createrepository">createRepository</h2>
+<p><a id="opIdcreateRepository"></a></p>
+<blockquote>
+<p>Code samples</p>
+</blockquote>
+<pre class="highlight tab tab-shell"><code><span class="hljs-comment"># You can also use wget</span>
+curl -X POST https://api.github.com/repos \
+  -H <span class="hljs-string">&#x27;Content-Type: application/json&#x27;</span> \
+  -H <span class="hljs-string">&#x27;Accept: application/json&#x27;</span>
+
+</code></pre>
+<pre class="highlight tab tab-javascript--nodejs"><code><span class="hljs-keyword">const</span> fetch = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;node-fetch&#x27;</span>);
+<span class="hljs-keyword">const</span> inputBody = <span class="hljs-literal">false</span>;
+<span class="hljs-keyword">const</span> headers = {
+  <span class="hljs-string">&#x27;Content-Type&#x27;</span>:<span class="hljs-string">&#x27;application/json&#x27;</span>,
+  <span class="hljs-string">&#x27;Accept&#x27;</span>:<span class="hljs-string">&#x27;application/json&#x27;</span>
+};
+
+fetch(<span class="hljs-string">&#x27;https://api.github.com/repos&#x27;</span>,
+{
+  <span class="hljs-attr">method</span>: <span class="hljs-string">&#x27;POST&#x27;</span>,
+  <span class="hljs-attr">body</span>: <span class="hljs-built_in">JSON</span>.stringify(inputBody),
+  <span class="hljs-attr">headers</span>: headers
+})
+.then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">res</span>) </span>{
+    <span class="hljs-keyword">return</span> res.json();
+}).then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">body</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(body);
+});
+
+</code></pre>
+<p><code>POST /repos</code></p>
+<p><em>新しいリポジトリを作成する</em></p>
+<blockquote>
+<p>Body parameter</p>
+</blockquote>
+<pre class="highlight tab tab-json"><code><span class="hljs-literal">false</span>
+</code></pre>
+<blockquote>
+<p>Example responses</p>
+</blockquote>
+<h3 id="createrepository-responses">Responses</h3>
+<table>
+<thead>
+<tr>
+<th>Status</th>
+<th>Meaning</th>
+<th>Description</th>
+<th>Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>201</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.3.2">Created</a></td>
+<td>リポジトリを作成しました</td>
+<td>None</td>
+</tr>
+<tr>
+<td>400</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.1">Bad Request</a></td>
+<td>不正なリクエストです</td>
+<td>None</td>
+</tr>
+</tbody>
+</table>
+<h3 id="createrepository-responseschema">Response Schema</h3>
 <aside class="success">
 This operation does not require authentication
 </aside>
