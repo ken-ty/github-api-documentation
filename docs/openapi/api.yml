@@ -1,0 +1,44 @@
+# OpenAPIのバージョンを指定する
+openapi: 3.0.0
+
+# APIの概要を記述する
+info:
+  title: GitHubリポジトリAPI  # APIのタイトル
+  description: GitHub上のリポジトリを操作するためのAPI  # APIの説明
+  version: 1.0.0  # APIのバージョン
+
+# APIが提供されるURLを指定する
+servers:
+  - url: https://api.github.com
+
+# APIのエンドポイントを定義する
+paths:
+  /repos:  # /reposエンドポイント
+    # HTTPのGETリクエストに対する処理を定義する
+    get:
+      summary: リポジトリの一覧を取得する
+      operationId: listRepositories  # 処理を一意に識別するID
+      tags:  # エンドポイントをカテゴライズするタグ
+        - リポジトリ
+      # リクエストパラメータを定義する
+      parameters:
+        - name: visibility  # パラメータ名
+          in: query  # パラメータがURLクエリパラメータであることを指定する
+          description: リポジトリを公開範囲でフィルタリングする
+          required: false  # パラメータが必須であるかどうか
+          schema:  # パラメータのスキーマを定義する
+            type: string  # パラメータのタイプ
+            enum:  # パラメータが取りうる値を定義する
+              - all
+              - public
+              - private
+        - name: affiliation
+          in: query
+          description: リポジトリを所有者や協力者などでフィルタリングする
+          required: false
+          schema:
+            type: string
+            enum:
+              - owner
+              - collaborators
+              - organization_member

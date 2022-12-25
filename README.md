@@ -25,3 +25,8 @@ npm install -g cz-conventional-changelog-ja
 1. 承認もらったら develop にマージ
 1. develop を定期的に リリース
 1. リリース確定したら main に反映
+
+## api-docの作り方
+
+1. `/docs/openapi/api.yml` に全部書く
+1. `npm run api-docs` を実行する
