@@ -30,3 +30,12 @@ npm install -g cz-conventional-changelog-ja
 
 1. `/docs/openapi/api.yml` に全部書く
 1. `npm run api-docs` を実行する
+
+## 参考
+
+https://github.com/github/rest-api-description
+
+## リリース
+
+- [v0.0.1](5cc0f0d429590267f1d36b22e3fac39b6f258907)  
+    chatGPTが出力した`/repos`のAPI仕様書を一部調整してドキュメントを作成.
