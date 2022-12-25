@@ -37,5 +37,5 @@ https://github.com/github/rest-api-description
 
 ## リリース
 
-- [v0.0.1](5cc0f0d429590267f1d36b22e3fac39b6f258907)  
+- [v0.0.1](https://github.com/ken-ty/github-api-documentation/releases/tag/v0.0.1)  
     chatGPTが出力した`/repos`のAPI仕様書を一部調整してドキュメントを作成.
