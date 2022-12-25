@@ -31,6 +31,12 @@ npm install -g cz-conventional-changelog-ja
 1. `/docs/openapi/api.yml` に全部書く
 1. `npm run api-docs` を実行する
 
+## localhost の起動
+
+1. macなら 予め docker を起動しておく.
+1. `docker-compose up` を実行する.
+1. `localhost:8080`にアクセスする(読み込み長いです).
+
 ## 参考
 
 https://github.com/github/rest-api-description
